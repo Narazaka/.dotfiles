@@ -6,6 +6,7 @@
 .viminfo
 .vim
 .Xauthority
+.bash_history
 .zcomp*
 .zhistory
 *.zwc
