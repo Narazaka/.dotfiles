@@ -1,0 +1,15 @@
+[user]
+	name = Narazaka
+	email = info@narazaka.net
+[core]
+	excludesfile = $HOME/.gitignore.global
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+  st = status
+  c = commit
+  a = add
+  b = branch
+  co = checkout

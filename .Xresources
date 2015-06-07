@@ -1,0 +1,24 @@
+XTerm*faceName: "Sazanami Gothic:style=Gothic-Regular"
+!XTerm*faceName: "IPAexGothic"
+!XTerm*faceName: "IPAMonaMincho"
+XTerm*faceSize: 12
+XTerm*background: black
+XTerm*foreground: lightgray
+XTerm*highlightColor: blue
+XTerm*cursorColor: blue
+XTerm*scrollBar: true
+!XTerm*cjkWidth: true
+urxvt*font: xft:VL Gothic:size=10:antialias=true:hinting=true
+urxvt*foreground: snow
+urxvt*background: black
+!urxvt*background: [80]black
+!urxvt*depth: 32
+urxvt*transparent: true
+urxvt*shading: 20
+urxvt*saveLines: 10000
+urxvt*cursorBlink: true
+urxvt*scrollstyle: plain
+urxvt*scrollBar_right: true
+urxvt*fading: 20
+urxvt*pointerBlank: true
+!urxvt*perl-ext-common: default,tabbed

@@ -1,0 +1,4 @@
+$TERM="urxvt"
+# $TERM="xterm -fn fixed +sb -bg white -fg black"
+#$TERM="kterm -fn fixed +sb -bg white -fg black"
+#$TERM="kterm -vb -km euc -fg gray -bg white"
