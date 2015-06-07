@@ -3,7 +3,7 @@
 	email = info@narazaka.net
 [core]
 	excludesfile = $HOME/.gitignore.global
-	autocrlf = true
+	autocrlf = false
 [color]
 	diff = auto
 	status = auto
