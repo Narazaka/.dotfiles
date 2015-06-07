@@ -3,13 +3,17 @@
 	email = info@narazaka.net
 [core]
 	excludesfile = $HOME/.gitignore.global
+	autocrlf = true
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 [alias]
-  st = status
-  c = commit
-  a = add
-  b = branch
-  co = checkout
+	st = status
+	c = commit
+	a = add
+	b = branch
+	co = checkout
+	chp = cherry-pick
+[push]
+	default = simple

@@ -18,7 +18,7 @@
 .anthy
 .dbus
 .fltk
-.cpan
+.cpan*
 .cpanm
 .gem
 .gstreamer*
@@ -34,3 +34,16 @@
 .local
 .pekwm/history
 .pekwm/themes
+.VirtualBox
+.android
+.ceylon
+.emscripten*
+.imagej
+.lmmsrc.xml
+.matplotlib
+.node-gyp
+.npmrc
+.pulse-cookie
+.swt
+.unite
+.twitvim*
