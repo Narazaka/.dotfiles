@@ -67,7 +67,9 @@ set formatoptions+=mM
 " set backupdir=~/vim_backup
 " ---------------------
 " GUI view
-" set guifont=VL_ゴシック:h11:cSHIFTJIS
+if has('win32')
+  set guifont=VL_ゴシック:h11:cSHIFTJIS
+end
 " ---------------------
 " filetypes
 autocmd FileType c :compiler gcc
