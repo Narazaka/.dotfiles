@@ -34,3 +34,4 @@
 .local
 .pekwm/history
 .pekwm/themes
+!install_neobundle.sh
