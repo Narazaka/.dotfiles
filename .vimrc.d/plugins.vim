@@ -82,6 +82,7 @@ NeoBundle 'fugalh/desert.vim'
 
 NeoBundle 'vim-scripts/ShowWhiteSpace'
 NeoBundle 'Shougo/vim-nyaos'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'wavded/vim-stylus'
