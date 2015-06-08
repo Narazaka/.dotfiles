@@ -220,7 +220,14 @@ setopt print_exit_value      # 戻り値が 0 以外の場合終了コードを�
 ########################################
 # aliases
 ########################################
-alias ls='ls --color=auto'
+case ${OSTYPE} in
+  linux*)
+    alias ls='ls --color=auto'
+    ;;
+  darwin*)
+    alias ls='ls -G'
+    ;;
+esac
 alias la='ls -a' lsa='ls -a'
 alias ll='ls -l' lsl='ls -l'
 alias lal='ls -la' lla='ls -la' lsal='ls -la' lsla='ls -la'
@@ -238,6 +245,13 @@ alias -g W='| wc'
 alias nc='sudo netcfg'
 alias bzre='bzr explorer'
 alias fbterm='LANG=ja_JP.UTF8 fbterm'
+alias bec='bundle exec'
+alias rake='noglob rake'
+case ${OSTYPE} in
+  darwin*)
+    alias shoes='/Applications/Shoes.app/Contents/MacOS/shoes'
+    ;;
+esac
 # pop command
 alias pd='popd'
 alias gd='dirs -v; echo -n "select number: ";
