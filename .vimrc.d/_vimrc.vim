@@ -54,7 +54,7 @@ set shiftwidth=2
 set tabstop=2
 "set noexpandtab
 set expandtab
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 " set clipboard+=autoselect
 " set guioptions+=a
 " set paste
