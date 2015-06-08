@@ -172,7 +172,6 @@ eval `dircolors`
 # LS_COLORS
 ########################################
 eval `dircolors ~/.dir_colors -b`
-#export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 ########################################
 # Utility
@@ -220,14 +219,7 @@ setopt print_exit_value      # 戻り値が 0 以外の場合終了コードを�
 ########################################
 # aliases
 ########################################
-case ${OSTYPE} in
-  linux*)
-    alias ls='ls --color=auto'
-    ;;
-  darwin*)
-    alias ls='ls -G'
-    ;;
-esac
+alias ls='ls --color=auto'
 alias la='ls -a' lsa='ls -a'
 alias ll='ls -l' lsl='ls -l'
 alias lal='ls -la' lla='ls -la' lsal='ls -la' lsla='ls -la'
