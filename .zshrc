@@ -1,3 +1,4 @@
+if [ -f ~/.zshenv ] ; then ; source ~/.zshenv ; fi
 
 zcompile ~/.zshrc # compile zshrc
 export LANG=en_US.UTF-8
