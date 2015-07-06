@@ -118,27 +118,21 @@ setopt complete_aliases
 ########################################
 autoload -Uz colors ; colors
 
+PROMPT_COLOR="%{$fg_bold[black]%}"
+PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
+PROMPT2_COLOR="%{$fg_bold[magenta]}"
+SPROMPT_COLOR="%{$fg_bold[red]%}"
+RPROMPT_COLOR="%{$fg_bold[yellow]%}"
+#	PROMPT2_COLOR="%{[1m[35m%}"
+#	SPROMPT_COLOR="%{[1m[31m%}"
+#	RPROMPT_COLOR="%{[1m[33m%}"
 case ${UID} in
 	0)
 #	PROMPT_COLOR="%{[1m[31m%}"
-#	PROMPT2_COLOR="%{[1m[35m%}"
-#	SPROMPT_COLOR="%{[1m[31m%}"
-#	RPROMPT_COLOR="%{[1m[33m%}"
-	PROMPT_COLOR="%{$fg_bold[red]%}"
-	PROMPT2_COLOR="%{$fg_bold[magenta]}"
-	SPROMPT_COLOR="%{$fg_bold[red]%}"
-	RPROMPT_COLOR="%{$fg_bold[yellow]%}"
+	PROMPT_USER_COLOR="%{$fg_bold[red]%}"
 	;;
 	*)
-#	PROMPT_COLOR="%{[1m[34m%}"
-#	PROMPT_COLOR="%{[1m[36m%}"
-#	PROMPT2_COLOR="%{[1m[35m%}"
-#	SPROMPT_COLOR="%{[1m[31m%}"
-#	RPROMPT_COLOR="%{[1m[33m%}"
-	PROMPT_COLOR="%{$fg_bold[cyan]%}"
-	PROMPT2_COLOR="%{$fg_bold[magenta]}"
-	SPROMPT_COLOR="%{$fg_bold[red]%}"
-	RPROMPT_COLOR="%{$fg_bold[yellow]%}"
+	PROMPT_USER_COLOR="%{$fg_bold[cyan]%}"
 	;;
 esac
 #PROMPT_RESET="%{[m%}"
@@ -153,7 +147,7 @@ PROMPT_VAL_USER="$USER" # %n
 PROMPT_VAL_HOST="%m"
 PROMPT_VAL_HOST_LONG="%M"
 PROMPT_VAL_TIME="%*"
-PROMPT="${PROMPT_COLOR}${PROMPT_VAL_USER}@${PROMPT_VAL_HOST}${PROMPT_END}${PROMPT_RESET}"
+PROMPT="${PROMPT_USER_COLOR}${PROMPT_VAL_USER}${PROMPT_COLOR}@${PROMPT_HOST_COLOR}${PROMPT_VAL_HOST}${PROMPT_COLOR}${PROMPT_END}${PROMPT_RESET}"
 PROMPT2="${PROMPT2_COLOR}${PROMPT2_END}${PROMPT_RESET}"
 SPROMPT="${SPROMPT_COLOR}Correct${PROMPT_RESET} '%R' -> '%r' [nyae]?"
 RPROMPT="[${RPROMPT_COLOR}${PROMPT_VAL_PLACE_HOME}${PROMPT_RESET}]"
