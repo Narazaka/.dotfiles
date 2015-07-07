@@ -77,6 +77,8 @@ zle -N predict-off
 bindkey '^xp'  predict-on    # Cttl+x p で予測オン
 bindkey '^x^p' predict-off   # Cttl+x Ctrl+p で予測オフ
 
+autoload -Uz add-zsh-hook # precmd etc
+
 ########################################
 # Warnings
 ########################################
@@ -117,12 +119,23 @@ setopt complete_aliases
 # PROMPT
 ########################################
 autoload -Uz colors ; colors
+autoload -Uz vcs_info
 
 PROMPT_COLOR="%{$fg_bold[black]%}"
-PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
 PROMPT2_COLOR="%{$fg_bold[magenta]}"
 SPROMPT_COLOR="%{$fg_bold[red]%}"
 RPROMPT_COLOR="%{$fg_bold[yellow]%}"
+
+PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
+PROMPT_TIME_COLOR="%{$fg_bold[green]%}"
+PROMPT_SUCCESS_COLOR="%{$fg_bold[blue]%}"
+PROMPT_FAIL_COLOR="%{$fg_bold[red]%}"
+PROMPT_LAST_CMD_STATUS_COLOR="%(?.${PROMPT_SUCCESS_COLOR}.${PROMPT_FAIL_COLOR})" # $? : 最後のコマンドの終了ステータス
+PROMPT_VCS_COLOR="%{$fg_bold[white]%}"
+PROMPT_VCS_BRANCH_COLOR="%{$fg[green]%}"
+PROMPT_VCS_STAGED_COLOR="%{$fg[yellow]%}"
+PROMPT_VCS_UNSTAGED_COLOR="%{$fg[red]%}"
+PROMPT_VCS_ACTION_COLOR="%{$fg[yellow]%}"
 #	PROMPT2_COLOR="%{[1m[35m%}"
 #	SPROMPT_COLOR="%{[1m[31m%}"
 #	RPROMPT_COLOR="%{[1m[33m%}"
@@ -135,10 +148,11 @@ case ${UID} in
 	PROMPT_USER_COLOR="%{$fg_bold[cyan]%}"
 	;;
 esac
-#PROMPT_RESET="%{[m%}"
-PROMPT_RESET="%{$reset_color%}"
+#PROMPT_RESET_COLOR="%{[m%}"
+PROMPT_RESET_COLOR="%{$reset_color%}"
 
 # prompt -l # プロンプトテーマを表示するコマンド
+PROMPT_LAST_CMD_STATUS="%(?.O.X)" # $? : 最後のコマンドの終了ステータス
 PROMPT_END="%(!.#.$) "
 PROMPT2_END="%_> "
 PROMPT_VAL_PLACE_HOME="%~"
@@ -147,10 +161,21 @@ PROMPT_VAL_USER="$USER" # %n
 PROMPT_VAL_HOST="%m"
 PROMPT_VAL_HOST_LONG="%M"
 PROMPT_VAL_TIME="%*"
-PROMPT="${PROMPT_USER_COLOR}${PROMPT_VAL_USER}${PROMPT_COLOR}@${PROMPT_HOST_COLOR}${PROMPT_VAL_HOST}${PROMPT_COLOR}${PROMPT_END}${PROMPT_RESET}"
-PROMPT2="${PROMPT2_COLOR}${PROMPT2_END}${PROMPT_RESET}"
-SPROMPT="${SPROMPT_COLOR}Correct${PROMPT_RESET} '%R' -> '%r' [nyae]?"
-RPROMPT="[${RPROMPT_COLOR}${PROMPT_VAL_PLACE_HOME}${PROMPT_RESET}]"
+zstyle ':vcs_info:*' enable git svn bzr hg
+zstyle ':vcs_info:git:*' check-for-changes true # enable %c,%u
+zstyle ':vcs_info:git:*' stagedstr "${PROMPT_VCS_STAGED_COLOR}" # %c : has staged not commited entries
+zstyle ':vcs_info:git:*' unstagedstr "${PROMPT_VCS_UNSTAGED_COLOR}" # %u : has not staged not commited entries
+zstyle ':vcs_info:*' formats "${PROMPT_VCS_COLOR}[${PROMPT_VCS_BRANCH_COLOR}%c%u%b${PROMPT_VCS_COLOR}]" # %s=vcs name / %b=branch
+zstyle ':vcs_info:*' actionformats "${PROMPT_VCS_COLOR}[${PROMPT_VCS_BRANCH_COLOR}%c%u%b${PROMPT_VCS_COLOR}]${PROMPT_VCS_COLOR}(${PROMPT_VCS_ACTION_COLOR}%a${PROMPT_VCS_COLOR})" # %a=action
+precmd_vcs_info() {
+  LANG=C vcs_info
+  PROMPT_VAL_VCS="${vcs_info_msg_0_}"
+  PROMPT="${PROMPT_LAST_CMD_STATUS_COLOR}${PROMPT_LAST_CMD_STATUS}${PROMPT_USER_COLOR}${PROMPT_VAL_USER}${PROMPT_COLOR}@${PROMPT_HOST_COLOR}${PROMPT_VAL_HOST}${PROMPT_VAL_VCS}${PROMPT_COLOR}${PROMPT_END}${PROMPT_RESET_COLOR}"
+}
+add-zsh-hook precmd precmd_vcs_info
+PROMPT2="${PROMPT2_COLOR}${PROMPT2_END}${PROMPT_RESET_COLOR}"
+SPROMPT="${SPROMPT_COLOR}Correct${PROMPT_RESET_COLOR} '%R' -> '%r' [nyae]?"
+RPROMPT="[${RPROMPT_COLOR}${PROMPT_VAL_PLACE_HOME}${PROMPT_RESET_COLOR}]${PROMPT_TIME_COLOR}${PROMPT_VAL_TIME}${PROMPT_RESET_COLOR}"
 
 ########################################
 # Export
