@@ -121,7 +121,7 @@ setopt complete_aliases
 autoload -Uz colors ; colors
 autoload -Uz vcs_info
 
-PROMPT_COLOR="%{$fg_bold[black]%}"
+PROMPT_COLOR="%{$fg_bold[white]%}"
 PROMPT2_COLOR="%{$fg_bold[magenta]}"
 SPROMPT_COLOR="%{$fg_bold[red]%}"
 RPROMPT_COLOR="%{$fg_bold[yellow]%}"
