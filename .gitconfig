@@ -4,6 +4,7 @@
 [core]
 	excludesfile = $HOME/.gitignore.global
 	autocrlf = false
+	quotepath = false
 [color]
 	diff = auto
 	status = auto
