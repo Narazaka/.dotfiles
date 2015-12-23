@@ -136,6 +136,8 @@ RootMenu = "Pekwm" {
 		Submenu = "Exit to" {
 			Entry = "Xterm" { Actions = "RestartOther xterm" }
 			Entry = "TWM" { Actions = "RestartOther twm" }
+			Entry = "MWM" { Actions = "RestartOther mwm" }
+			Entry = "QVWM" { Actions = "RestartOther qvwm" }
 		}
 	}
 }
