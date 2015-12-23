@@ -101,7 +101,13 @@ NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'scrooloose/syntastic'
 
-NeoBundle 'vim-scripts/TwitVim'
+"NeoBundle 'vim-scripts/TwitVim'
+NeoBundle 'basyura/TweetVim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'basyura/twibill.vim'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'basyura/bitly.vim'
+
 NeoBundle 'koron/chalice'
 
 call neobundle#end()
