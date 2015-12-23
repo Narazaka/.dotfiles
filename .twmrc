@@ -143,10 +143,14 @@ Button3 = : iconmgr : f.function "move-or-lower"
 menu "defops"
 {
 "Twm"	f.title
-"KTerm"		f.exec "kterm &"
+"xterm"		f.exec "xterm &"
+"urxvt"		f.exec "urxvt &"
+"mc"	f.exec "urxvt -e mc &"
 "Thunar"	f.exec "thunar &"
 "Firefox"	f.exec "firefox &"
 #"Netscape"	f.exec "exec netscape &"
+""		f.nop
+"Window Managers" f.menu "wm"
 ""		f.nop
 #"Iconify"	f.iconify
 #"Resize"	f.resize
@@ -184,3 +188,9 @@ menu "exec"
  "GIMP"　　　　f.exec "gimp &"
  "Tgif"　　　　 f.exec "tgif &"
  }
+
+menu "wm" {
+"PekWM"	f.startwm "pekwm"
+"mwm"	f.startwm "mwm"
+"qvwm"	f.startwm "qvwm"
+}
