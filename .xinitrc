@@ -26,6 +26,8 @@ WM="pekwm" # very lightweight configurable WM +themes/group based on aewm++
 #WM="xfce4" # lightweight ENV
 #WM="kde" # like Windows ENV
 #WM="gnome" # like Mac ENV
+#WM="cinnamon" # GNOME3 fork
+#WM="mate" # GNOME2 fork
 
 #-------------------------------------------------------------------------------
 # **Choose Input Method Module
@@ -179,6 +181,8 @@ case $WM in
 	"xfce4") SESSIONCMD=startxfce4 ;;
 	"kde") SESSIONCMD=startkde ;;
 	"gnome") SESSIONCMD=gnome-session ;;
+	"cinnamon") SESSIONCMD=cinnamon-session ;;
+	"mate") SESSIONCMD=mate-session ;;
 	*) SESSIONCMD=$DEFWM ;;
 esac
 
