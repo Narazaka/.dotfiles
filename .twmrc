@@ -1,0 +1,186 @@
+#
+# $XConsortium: system.twmrc /main/9 1996/10/16 16:14:38 kaleb $
+# 
+# Default twm configuration file; needs to be kept small to conserve string
+# space in systems whose compilers don't handle medium-sized strings.
+#
+# Sites should tailor this file, providing any extra title buttons, menus, etc.
+# that may be appropriate for their environment.  For example, if most of the
+# users were accustomed to uwm, the defaults could be set up not to decorate
+# any windows and to use meta-keys.
+#
+
+NoGrabServer
+RestartPreviousState
+DecorateTransients
+TitleFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+ResizeFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+MenuFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+IconFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
+IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
+#ClientBorderWidth
+
+#http://www.h4.dion.ne.jp/~hanbei/twm.htm
+#IconManagerGeometry "=200x5+1160+4"　　　　#IconManagerの位置を左下に
+RandomPlacement "on"　　　　　#geometry指定の物以外ランダムに配置
+ShowIconManager
+
+#http://uguisu.skr.jp/Windows/.twmrc
+# WIDTHxHEIGHT+XOFF+YOFF +0+0 左上 -0-0 右下 -0+0 右上 +0-0 左下
+# "1024x10+0-0" 10 と書けば，Windowsっぽくなる
+IconManagerGeometry     "250x768-0+0"
+
+#http://uguisu.skr.jp/Windows/.twmrc
+# 主要なTwm変数の設定
+# ウインドウサイズをドラッグで調節
+AutoRelativeResize
+NoGrabServer
+#RestartPreviousState
+DecorateTransients
+
+#http://uguisu.skr.jp/Windows/.twmrc
+# ボタンをつける
+IconDirectory "~/.twm/ico"
+# RightTitleButton "menu0" = f.identify
+RightTitleButton "window_max" = f.fullzoom
+RightTitleButton "delete11" = f.delete
+#RightTitleButton "resize11" = f.resize
+
+NoTitle　　　　　#時計はタイトルバーがない方が良いので
+ {
+ 　　"asclock"
+ 　　"xclock"
+ 　　"bclock"
+ 　　"mlclock"
+ 　　"sunclock"
+ 　　"tclock"
+ 　　"ninix"
+ }
+#AutoRaise　　　　　#ターミナルはマウスが載ると上に来るように。
+# {　　　#注意：ダイアログが起きるアプリは入れないように(例：gnome-terminalなど)
+# 　　"kterm"
+# 　　"aterm"
+# 　　"rxvt"
+# 　　"xcalc"
+# }
+
+#Color
+#{
+#    BorderColor "slategrey"
+#    DefaultBackground "rgb:2/a/9"
+#    DefaultForeground "gray85"
+#    TitleBackground "rgb:2/a/9"
+#    TitleForeground "gray85"
+#    MenuBackground "rgb:2/a/9"
+#    MenuForeground "gray85"
+#    MenuTitleBackground "gray70"
+#    MenuTitleForeground "rgb:2/a/9"
+#    IconBackground "rgb:2/a/9"
+#    IconForeground "gray85"
+#    IconBorderColor "gray85"
+#    IconManagerBackground "rgb:2/a/9"
+#    IconManagerForeground "gray85"
+#}
+
+#http://www.sodan.ecc.u-tokyo.ac.jp/2001/article/tips/tips2.shtml
+Color
+{
+    BorderColor "gray70"
+    DefaultBackground "navy"
+    DefaultForeground "gray85"
+    TitleBackground "navy"
+    TitleForeground "gray85"
+    MenuBackground "navy"
+    MenuForeground "gray85"
+    MenuTitleBackground "gray70"
+    MenuTitleForeground "navy"
+    IconBackground "navy"
+    IconForeground "skyblue"
+    IconBorderColor "skyblue"
+    IconManagerBackground "skyblue"
+    IconManagerForeground "black"
+}
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+#左
+Button1 = : root : f.menu "defops"
+#右
+Button2 = : root : f.menu "exec"
+#中
+Button3 = : root : f.menu "exec"
+
+Button1 = m : window|icon : f.function "move-or-lower"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-raise"
+#Button1 = : window : f.function "move-or-lower"
+#Button2 = : window : f.iconify
+#Button3 = : window : f.function "move-or-raise"
+
+Button1 = : title : f.function "move-or-raise"
+Button2 = : title : f.raiselower
+
+Button1 = : icon : f.function "move-or-iconify"
+Button2 = : icon : f.iconify
+
+#Button1 = : iconmgr : f.iconify
+#Button2 = : iconmgr : f.iconify
+Button1 = : iconmgr : f.function "move-or-raise"
+Button3 = : iconmgr : f.function "move-or-lower"
+
+#
+# And a menus with the usual things
+#
+menu "defops"
+{
+"Twm"	f.title
+"KTerm"		f.exec "kterm &"
+"Thunar"	f.exec "thunar &"
+"Firefox"	f.exec "firefox &"
+#"Netscape"	f.exec "exec netscape &"
+""		f.nop
+#"Iconify"	f.iconify
+#"Resize"	f.resize
+#"Move"		f.move
+#"Raise"		f.raise
+#"Lower"		f.lower
+#""		f.nop
+#"Focus"		f.focus
+#"Unfocus"	f.unfocus
+"Show Iconmgr"	f.showiconmgr
+"Hide Iconmgr"	f.hideiconmgr
+""		f.nop
+"Kill"		f.destroy
+"Delete"	f.delete
+""		f.nop
+"Restart"	f.restart
+"Exit"		f.quit
+}
+
+menu "exec"
+ {
+ "Apps"　　　f.title
+ "kterm"　　　　f.exec "kterm -sb -km euc -xim &"　 #好みのアプリを記入。右クリックで
+ ""		f.nop
+ "gedit"		f.exec "gedit &"
+ "mousepad"		f.exec "mousepad &"
+ ""		f.nop
+ "Firefox"	f.exec "firefox &"
+ "Chrome"	f.exec "google-chrome &"
+ ""		f.nop
+ "Rxvt"		f.exec "rxvt &"
+ ""		f.nop
+ "ninix"　　　 f.exec "ninix &"　　　　　　　　　ランチャーが表示される
+ "calc"　　　　 f.exec "xcalc &"
+ "GIMP"　　　　f.exec "gimp &"
+ "Tgif"　　　　 f.exec "tgif &"
+ }
