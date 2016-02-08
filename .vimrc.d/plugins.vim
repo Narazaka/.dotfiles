@@ -77,6 +77,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle "vimtaku/hl_matchit.vim"
 NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'fugalh/desert.vim'
 

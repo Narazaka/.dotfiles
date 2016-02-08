@@ -100,11 +100,13 @@ nnoremap Urr :<C-u>Unite rails/route<CR>
 nnoremap Urt :<C-u>Unite rails/spec<CR>
 nnoremap Ura :<C-u>Unite rails/asset<CR>
 nnoremap Urh :<C-u>Unite rails/helper<CR>
-nnoremap Ugg :<C-u>Unite giti<CR>
+nnoremap Ugt :<C-u>Unite giti<CR>
 nnoremap Ugb :<C-u>Unite giti/branch<CR>
 nnoremap Ugs :<C-u>Unite giti/status<CR>
 nnoremap Ugl :<C-u>Unite giti/log<CR>
 nnoremap Ugr :<C-u>Unite giti/remote<CR>
+nnoremap Ugc :<C-u>Unite giti/config<CR>
+nnoremap Ugg :<C-u>Unite giti/grep<CR>
 " ---------------------
 " shortcut
 nnoremap Xd :<C-u>vertical diffsplit 
