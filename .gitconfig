@@ -18,3 +18,5 @@
 	chp = cherry-pick
 [push]
 	default = simple
+[interactive]
+	singlekey = true
