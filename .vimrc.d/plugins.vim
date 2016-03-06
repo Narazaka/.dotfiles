@@ -99,7 +99,7 @@ NeoBundle 'yuku-t/vim-ref-ri'
 NeoBundle 'vim-scripts/ruby-matchit'
 NeoBundle 'basyura/unite-rails'
 "NeoBundle 'klen/python-mode'
-NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'othree/yajs.vim'
 
 NeoBundle 'scrooloose/syntastic'
 
