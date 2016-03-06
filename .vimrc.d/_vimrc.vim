@@ -68,7 +68,7 @@ set formatoptions+=mM
 " ---------------------
 " GUI view
 if has('win32')
-  set guifont=VL_ゴシック:h11:cSHIFTJIS
+  set guifont=VL_ゴシック:h9:cSHIFTJIS
 end
 " ---------------------
 " filetypes
