@@ -21,6 +21,8 @@ if neobundle#is_installed('neocomplete.vim')
 	" For perlomni.vim setting.
 	" https://github.com/c9s/perlomni.vim
 	let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+	let g:neocomplete#sources#omni#input_patterns.ruby = '\h\w\.\w*'
+	let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 "	inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 	inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "<CR>"
 	inoremap <expr><TAB> pumvisible() ? "<C-n>" : "<TAB>"
@@ -50,6 +52,7 @@ elseif neobundle#is_installed('neocomplcache.vim')
 	let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 	let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 	let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+	let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 	let g:NeoComplCache_EnableAutoSelect = 1
 	inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
 	inoremap <expr><TAB> pumvisible() ? "<C-n>" : "<TAB>"
