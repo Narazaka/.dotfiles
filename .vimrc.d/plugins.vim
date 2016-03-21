@@ -100,6 +100,7 @@ NeoBundle 'vim-scripts/ruby-matchit'
 NeoBundle 'basyura/unite-rails'
 "NeoBundle 'klen/python-mode'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'fatih/vim-go'
 
 NeoBundle 'scrooloose/syntastic'
 
