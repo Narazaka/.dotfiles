@@ -85,7 +85,7 @@ NeoBundle 'fugalh/desert.vim'
 NeoBundle 'vim-scripts/ShowWhiteSpace'
 NeoBundle 'Shougo/vim-nyaos'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'slim-template/vim-slim'
@@ -101,6 +101,7 @@ NeoBundle 'basyura/unite-rails'
 "NeoBundle 'klen/python-mode'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'Quramy/tsuquyomi' " typescript
 
 NeoBundle 'scrooloose/syntastic'
 
