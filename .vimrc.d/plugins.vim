@@ -77,6 +77,12 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle "vimtaku/hl_matchit.vim"
 NeoBundle 'c9s/perlomni.vim'
+if (has('python') || has('python3')) && !has('win32')
+NeoBundle 'marijnh/tern_for_vim', {
+  \ 'build': {
+  \   'others': 'npm install'
+  \}}
+endif
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
