@@ -78,7 +78,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle "vimtaku/hl_matchit.vim"
 NeoBundle 'c9s/perlomni.vim'
 if (has('python') || has('python3')) && !has('win32')
-NeoBundle 'marijnh/tern_for_vim', {
+NeoBundle 'ternjs/tern_for_vim', {
   \ 'build': {
   \   'others': 'npm install'
   \}}
