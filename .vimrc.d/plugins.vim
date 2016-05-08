@@ -77,7 +77,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle "vimtaku/hl_matchit.vim"
 NeoBundle 'c9s/perlomni.vim'
-if (has('python') || has('python3')) && !has('win32')
+if has('python') || has('python3')
   NeoBundleLazy 'ternjs/tern_for_vim'
   if neobundle#tap('tern_for_vim')
     call neobundle#config({
