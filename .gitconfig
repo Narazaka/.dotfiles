@@ -20,3 +20,5 @@
 	default = simple
 [interactive]
 	singlekey = true
+[diff]
+	compactionHeuristic = true
