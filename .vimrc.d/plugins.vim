@@ -77,27 +77,27 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle "vimtaku/hl_matchit.vim"
 NeoBundle 'c9s/perlomni.vim'
-if has('python') || has('python3')
-  NeoBundleLazy 'ternjs/tern_for_vim'
-  if neobundle#tap('tern_for_vim')
-    call neobundle#config({
-    \   'build': {
-    \     'others': 'npm install'
-    \   },
-    \   'autoload': {
-    \     'functions': ['tern#Complete', 'tern#Enable'],
-    \     'filetypes': ['javascript']
-    \   },
-    \   'commands': [
-    \     'TernDef', 'TernDoc', 'TernType', 'TernRefs', 'TernRename'
-    \   ]
-    \ })
-
-    let g:tern_map_keys = 0
-
-    call neobundle#untap()
-  endif
-endif
+" if has('python') || has('python3')
+"   NeoBundleLazy 'ternjs/tern_for_vim'
+"   if neobundle#tap('tern_for_vim')
+"     call neobundle#config({
+"     \   'build': {
+"     \     'others': 'npm install'
+"     \   },
+"     \   'autoload': {
+"     \     'functions': ['tern#Complete', 'tern#Enable'],
+"     \     'filetypes': ['javascript']
+"     \   },
+"     \   'commands': [
+"     \     'TernDef', 'TernDoc', 'TernType', 'TernRefs', 'TernRename'
+"     \   ]
+"     \ })
+"
+"     let g:tern_map_keys = 0
+"
+"     call neobundle#untap()
+"   endif
+" endif
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
