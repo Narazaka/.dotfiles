@@ -74,8 +74,8 @@ ${color ccffff}CPU Usage ${hr 2}$color
 ${color ccffff}Total  ${color}${cpu cpu0}% ${cpubar cpu0 4}
 ${color ccffff}Core 1 ${color}${cpu cpu1}% ${cpubar cpu1 4}
 ${color ccffff}Core 2 ${color}${cpu cpu2}% ${cpubar cpu2 4}
-${color ccffff}Core 3 ${color}${cpu cpu3}% ${cpubar cpu3 4}
-${color ccffff}Core 4 ${color}${cpu cpu4}% ${cpubar cpu4 4}
+#${color ccffff}Core 3 ${color}${cpu cpu3}% ${cpubar cpu3 4}
+#${color ccffff}Core 4 ${color}${cpu cpu4}% ${cpubar cpu4 4}
 $color${cpugraph cpu1 25,120 000000 ff6600 } ${cpugraph cpu2 25,120 000000 ff6600 }
 ${color ccffff}CPU Temperture ${color}${acpitemp}℃
 ${color ccffff}M/B Temperture $color${hwmon temp 2}℃
