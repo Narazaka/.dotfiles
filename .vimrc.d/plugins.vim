@@ -123,6 +123,7 @@ NeoBundle 'basyura/unite-rails'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'Quramy/tsuquyomi' " typescript
+NeoBundle 'ryym/vim-riot'
 
 NeoBundle 'scrooloose/syntastic'
 
