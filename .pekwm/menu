@@ -36,16 +36,17 @@ RootMenu = "Pekwm" {
 #		Entry = "Xpdf" { Actions = "Exec xpdf &" }
 #		Entry = "Evince" { Actions = "Exec evince &" }
 		Entry = "gqview" { Actions = "Exec gqview &" }
+		Entry = "feh" { Actions = "Exec feh &" }
 	}
 	Submenu = "Multimedia" {
 #		Entry = "Amarok" { Actions = "Exec amarok &" }
 #		Entry = "Quod Libet" { Actions = "Exec quodlibet &" }
 #		Entry = "Xmms" { Actions = "Exec xmms &" }
 		Entry = "Audacious" { Actions = "Exec audacious &" }
-#		Entry = "MPlayer" { Actions = "Exec gmplayer &" }
+		Entry = "MPlayer" { Actions = "Exec gmplayer &" }
 		# Entry = "SMPlayer" { Actions = "Exec smplayer &" }
 		Entry = "Pymp" { Actions = "Exec pymp &" }
-#		Entry = "VLC" { Actions = "Exec vlc &" }
+		Entry = "VLC" { Actions = "Exec vlc &" }
 #		Entry = "Xine" { Actions = "Exec xine &" }
 #		Entry = "GXine" { Actions = "Exec gxine &" }
 #		Entry = "ffplay" { Actions = "Exec ffplay &" }
