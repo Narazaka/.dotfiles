@@ -2,7 +2,7 @@
 	name = Narazaka
 	email = info@narazaka.net
 [core]
-	excludesfile = $HOME/.gitignore.global
+	excludesfile = ~/.gitignore.global
 	autocrlf = false
 	quotepath = false
 [color]
