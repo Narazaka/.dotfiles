@@ -1,0 +1,349 @@
+# ------------------------------------
+# base
+# ------------------------------------
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ------------------------------------
+# unite
+# ------------------------------------
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
+repo = 'tsukkee/unite-help'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'kmnk/vim-unite-giti'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
+[[plugins]]
+repo = 'sgur/unite-everything'
+
+[[plugins]]
+repo = 'tacroe/unite-mark'
+
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+
+[[plugins]]
+repo = 'sgur/unite-qf'
+
+[[plugins]]
+repo = 'ujihisa/unite-gem'
+
+[[plugins]]
+repo = 'kaorimatz/unite-cpan-module'
+
+[[plugins]]
+repo = 'basyura/unite-rails'
+
+# ------------------------------------
+# doc
+# ------------------------------------
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+# ------------------------------------
+# complete
+# ------------------------------------
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = "has('lua')"
+
+[[plugins]]
+repo = 'Shougo/neocomplcache-clang'
+
+# ------------------------------------
+# util
+# ------------------------------------
+
+# [[plugins]]
+# repo = 'kana/vim-smartchr'
+
+# [[plugins]]
+# repo = 'kana/vim-smartinput'
+
+[[plugins]]
+repo = 'vim-scripts/taglist.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# ------------------------------------
+# for external tools
+# ------------------------------------
+
+[[plugins]]
+repo = 'vim-scripts/vimtux'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'grep.vim'
+
+# ------------------------------------
+# textobj
+# ------------------------------------
+
+# textobj BASE
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+# al
+[[plugins]]
+repo = 'kana/vim-textobj-line'
+
+# ai(upper level) aI(same level)
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+
+# a/
+[[plugins]]
+repo = 'kana/vim-textobj-lastpat'
+
+# i_
+[[plugins]]
+repo = 'kana/vim-textobj-underscore'
+
+# i-
+[[plugins]]
+repo = 'RyanMcG/vim-textobj-dash'
+
+# if.
+[[plugins]]
+repo = 'thinca/vim-textobj-between'
+
+# ic
+[[plugins]]
+repo = 'thinca/vim-textobj-comment'
+
+# ip
+[[plugins]]
+repo = 'gilligan/textobj-lastpaste'
+
+# iS aS=include multibyte
+[[plugins]]
+repo = 'saihoooooooo/vim-textobj-space'
+
+# ik iv
+[[plugins]]
+repo = 'vimtaku/vim-textobj-keyvalue'
+
+# i,
+[[plugins]]
+repo = 'sgur/vim-textobj-parameter'
+
+# iu
+# [[plugins]]
+# repo = 'mattn/vim-textobj-url'
+
+# iu
+[[plugins]]
+repo = 'rhysd/vim-textobj-lastinserted'
+
+# ir ruby block
+[[plugins]]
+repo = 'rhysd/vim-textobj-ruby'
+
+# ,w ,e i,w ...
+[[plugins]]
+repo = 'h1mesuke/textobj-wiw'
+
+# W iW W E B
+[[plugins]]
+repo = 'deton/jasegment.vim'
+
+# ------------------------------------
+# tools
+# ------------------------------------
+
+# [[plugins]]
+# repo = 'wesleyche/SrcExpl'
+
+# [[plugins]]
+# repo = 'wesleyche/Trinity'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+# [[plugins]]
+# repo = 'Shougo/vimshell.vim'
+
+# [[plugins]]
+# repo = 'vim-scripts/TwitVim'
+
+# [[plugins]]
+# repo = 'basyura/TweetVim'
+
+# [[plugins]]
+# repo = 'mattn/webapi-vim'
+
+# [[plugins]]
+# repo = 'basyura/twibill.vim'
+
+# [[plugins]]
+# repo = 'tyru/open-browser.vim'
+
+# [[plugins]]
+# repo = 'basyura/bitly.vim'
+
+# [[plugins]]
+# repo = 'koron/chalice'
+
+# ------------------------------------
+# view
+# ------------------------------------
+
+[[plugins]]
+repo = 'fugalh/desert.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+# [[plugins]]
+# repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'vimtaku/hl_matchit.vim'
+
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'vim-scripts/ShowWhiteSpace'
+
+# ------------------------------------
+# lang
+# ------------------------------------
+
+# if has('python') || has('python3')
+#   NeoBundleLazy 'ternjs/tern_for_vim'
+#   if neobundle#tap('tern_for_vim')
+#     call neobundle#config({
+#     \   'build': {
+#     \     'others': 'npm install'
+#     \   },
+#     \   'autoload': {
+#     \     'functions': ['tern#Complete', 'tern#Enable'],
+#     \     'filetypes': ['javascript']
+#     \   },
+#     \   'commands': [
+#     \     'TernDef', 'TernDoc', 'TernType', 'TernRefs', 'TernRename'
+#     \   ]
+#     \ })
+#
+#     let g:tern_map_keys = 0
+#
+#     call neobundle#untap()
+#   endif
+# endif
+
+[[plugins]]
+repo = 'vim-perl/vim-perl'
+on_ft = ['perl']
+
+[[plugins]]
+repo = 'c9s/perlomni.vim'
+on_ft = ['perl']
+
+# [[plugins]]
+# repo = 'Shougo/vim-nyaos'
+# on_ft = 'nyaos'
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['html']
+
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = ['pug', 'jade']
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = ['scss', 'sass']
+
+[[plugins]]
+repo = 'wavded/vim-stylus'
+on_ft = ['stylus']
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]]
+repo = 'vim-scripts/css_color'
+
+[[plugins]]
+repo = 'vim-scripts/tex-syntax'
+on_ft = ['tex']
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+on_ft = ['md', 'markdown']
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+[[plugins]]
+repo = 'vim-scripts/ruby-matchit'
+on_ft = ['ruby']
+
+# [[plugins]]
+# repo = 'klen/python-mode'
+
+# JavaScript
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['js', 'javascript']
+
+# typescript
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['ts', 'typescript']
+
+[[plugins]]
+repo = 'ryym/vim-riot'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']

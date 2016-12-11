@@ -59,5 +59,5 @@ if exists('&ambiwidth')
 endif
 " 一部のUCS文字の幅を自動計測して決める
 if has('kaoriya')
-  set ambiwidth=auto
+"  set ambiwidth=auto
 endif

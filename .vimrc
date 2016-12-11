@@ -19,5 +19,4 @@ if has('win32')
   let $PATH = $GOPATH."/bin;".$PATH
 end
 
-set runtimepath+=~/.vim/bundle
 runtime! ../.vimrc.d/*.vim

@@ -1,4 +1,4 @@
-if neobundle#is_installed('neocomplete.vim')
+if dein#tap('neocomplete.vim')
 	" neocomplcache
 	let g:neocomplete#enable_at_startup = 1
 	let g:neocomplete#enable_smart_case = 1
@@ -27,7 +27,7 @@ if neobundle#is_installed('neocomplete.vim')
 	inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "<CR>"
 	inoremap <expr><TAB> pumvisible() ? "<C-n>" : "<TAB>"
 	"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-elseif neobundle#is_installed('neocomplcache.vim')
+elseif dein#tap('neocomplcache.vim')
 	" if has('win32') + has('win64')
 	" let g:neocomplcache_temporary_dir = 'O:/.neocon'
 	" endif
