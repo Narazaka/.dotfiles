@@ -5,6 +5,11 @@ export LANG=en_US.UTF-8
 export PATH=~/.bin:~/local/bin:${PATH}
 export PATH=node_modules/.bin:${PATH}
 
+# ssh経由でログインしているか
+if [ -n "$SSH_CLIENT" -o -n "$SSH_TTY" -o "`ps -o comm= -p $PPID`" = "sshd" ] ; then
+  IS_REMOTE_LOGIN_SHELL=1
+fi
+
 ########################################
 # History
 ########################################
@@ -122,12 +127,16 @@ setopt complete_aliases
 autoload -Uz colors ; colors
 autoload -Uz vcs_info
 
-PROMPT_COLOR="%{$fg_bold[white]%}"
+PROMPT_COLOR="%{$bg[default]%}%{$fg_bold[white]%}"
 PROMPT2_COLOR="%{$fg_bold[magenta]}"
 SPROMPT_COLOR="%{$fg_bold[red]%}"
 RPROMPT_COLOR="%{$fg_bold[yellow]%}"
 
-PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
+if [ $IS_REMOTE_LOGIN_SHELL ] ; then
+  PROMPT_HOST_COLOR="%{$bg[red]%}%{$fg_bold[yellow]%}"
+else
+  PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
+fi
 PROMPT_TIME_COLOR="%{$fg_bold[green]%}"
 PROMPT_SUCCESS_COLOR="%{$fg_bold[blue]%}"
 PROMPT_FAIL_COLOR="%{$fg_bold[red]%}"
@@ -171,7 +180,7 @@ zstyle ':vcs_info:*' actionformats "${PROMPT_VCS_COLOR}[${PROMPT_VCS_BRANCH_COLO
 precmd_vcs_info() {
   LANG=C vcs_info
   PROMPT_VAL_VCS="${vcs_info_msg_0_}"
-  PROMPT="${PROMPT_LAST_CMD_STATUS_COLOR}${PROMPT_LAST_CMD_STATUS}${PROMPT_USER_COLOR}${PROMPT_VAL_USER}${PROMPT_COLOR}@${PROMPT_HOST_COLOR}${PROMPT_VAL_HOST}${PROMPT_VAL_VCS}${PROMPT_COLOR}${PROMPT_END}${PROMPT_RESET_COLOR}"
+  PROMPT="${PROMPT_LAST_CMD_STATUS_COLOR}${PROMPT_LAST_CMD_STATUS}${PROMPT_USER_COLOR}${PROMPT_VAL_USER}${PROMPT_COLOR}@${PROMPT_HOST_COLOR}${PROMPT_VAL_HOST}${PROMPT_COLOR}${PROMPT_VAL_VCS}${PROMPT_COLOR}${PROMPT_END}${PROMPT_RESET_COLOR}"
 }
 add-zsh-hook precmd precmd_vcs_info
 PROMPT2="${PROMPT2_COLOR}${PROMPT2_END}${PROMPT_RESET_COLOR}"
