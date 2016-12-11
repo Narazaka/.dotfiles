@@ -50,3 +50,5 @@
 .unite
 .twitvim*
 .zshenv
+.git-master
+.anyenv
