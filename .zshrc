@@ -1,4 +1,22 @@
 if [ -f ~/.zshenv ] ; then ; source ~/.zshenv ; fi
+if [ -f ~/.zplug/init.zsh ] ; then
+  source ~/.zplug/init.zsh
+  source ~/.zpluglist.zsh
+  if ! zplug check --verbose; then
+    printf 'Install? [y/N]: '
+    if read -q; then
+      echo; zplug install
+    fi
+  fi
+  zplug load --verbose
+
+  if zplug check "mollifier/anyframe" ; then
+    bindkey '^x^f' anyframe-widget-insert-filename
+    bindkey '^x^b' anyframe-widget-checkout-git-branch
+    bindkey '^x^h' anyframe-widget-put-history
+  fi
+fi
+
 
 zcompile ~/.zshrc # compile zshrc
 export LANG=en_US.UTF-8
