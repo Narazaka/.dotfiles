@@ -22,7 +22,12 @@
 	singlekey = true
 [diff]
 	compactionHeuristic = true
+[diff "xlsx"]
+	binary = true
+	textconv = $GOPATH/bin/git-xlsx-textconv
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[diff "exif"]
+	textconv = exiftool

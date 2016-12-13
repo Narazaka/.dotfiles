@@ -11,8 +11,11 @@ if [ -f ~/.zplug/init.zsh ] ; then
   zplug load --verbose
 
   if zplug check "mollifier/anyframe" ; then
-    bindkey '^x^f' anyframe-widget-insert-filename
+    bindkey '^xf' anyframe-widget-insert-filename
     bindkey '^x^b' anyframe-widget-checkout-git-branch
+    bindkey '^xb' anyframe-widget-insert-git-branch
+    # bindkey '^xg' anyframe-widget-git-add
+    # bindkey '^x^h' anyframe-widget-execute-history
     bindkey '^x^h' anyframe-widget-put-history
   fi
 fi
