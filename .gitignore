@@ -52,3 +52,4 @@
 .zshenv
 .git-master
 .anyenv
+.zplug
