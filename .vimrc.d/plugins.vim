@@ -21,6 +21,7 @@ endif
 
 call dein#begin(expand('~/.vim/bundle/'))
 call dein#load_toml(expand('~/.vimrc.d/dein.toml'), {'lazy': 0})
+call dein#load_toml(expand('~/.vimrc.d/dein_lazy.toml'), {'lazy': 1})
 call dein#end()
 
 filetype plugin indent on
