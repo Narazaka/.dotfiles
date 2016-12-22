@@ -23,7 +23,7 @@ fi
 
 zcompile ~/.zshrc # compile zshrc
 export LANG=en_US.UTF-8
-export PATH=~/.bin:~/local/bin:${PATH}
+export PATH=~/.bin:~/local/bin:~/.usr/bin:${PATH}
 export PATH=node_modules/.bin:${PATH}
 
 # ssh経由でログインしているか
