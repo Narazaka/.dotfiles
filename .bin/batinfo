@@ -1,0 +1,15 @@
+#!/bin/sh
+
+state=`cat /sys/devices/platform/smapi/BAT0/state`
+echo Status: ${state}
+cycle_count=`cat /sys/devices/platform/smapi/BAT0/cycle_count`
+echo Cycle Count: ${cycle_count}
+remaining_percent=`cat /sys/devices/platform/smapi/BAT0/remaining_percent`
+echo Remaining Value: ${remaining_percent}%
+if [ ${state} = "discharging" ] ; then
+remaining_running_time=`cat /sys/devices/platform/smapi/BAT0/remaining_running_time`
+echo Remaining Running Time: ${remaining_running_time}min
+elif [ ${state} = "charging" ] ; then
+remaining_charging_time=`cat /sys/devices/platform/smapi/BAT0/remaining_charging_time`
+echo Remaining Charging Time: ${remaining_charging_time}min
+fi
