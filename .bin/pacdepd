@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+
+use utf8;
+binmode STDIN,':encoding(utf8)';
+binmode STDOUT,':encoding(utf8)';
+
+unless($ARGV[0]){
+	print 'Usage: pacdep <package name>',"\n"; 
+	exit;
+}
+
+print 'Checking Dependency... ';
+for my $pname (@ARGV){
+	my $depends = pacdep($pname);
+	my $list = [];
+	deprestore($depends,0,$list);
+	for my $line (@$list){
+		print "  " x $line->{depth} ,$line->{name} ,"\n";
+	}
+}
+
+exit;
+
+sub pacdep{
+	my $packagename = shift;
+	my $ret = `pacman -Qi $packagename`;
+	unless($ret){
+		return '';
+	}
+	my @retlines = split /\n/,$ret;
+	my $iname,$idata,%info;
+	for my $l (@retlines){
+		if($l =~ /^\w/){
+			($iname,$idata) = $l =~ /^(.+?)\s*:\s*(.*?)$/;
+		}else{
+			my ($cidata) = $l =~ /^\s*(.*?)$/;
+			$idata .= $cidata;
+		}
+		$info{$iname} = $idata;
+	}
+	my $depends;
+	if($info{'Depends On'} ne 'None'){
+		my @depnames = map {s/\s*>=.*//;$_} split /\s+/,$info{'Depends On'};
+		for my $pname (@depnames){
+			$depends->{$pname} = pacdep($pname);
+		}
+	}else{
+		$depends = '';
+	}
+	return $depends;
+}
+
+sub deprestore{
+	my $depends = shift;
+	my $depth = shift;
+	my $list = shift;
+	for my $pname (sort keys %{$depends}){
+		if($depends->{$pname}){
+			for my $dpname (sort keys %{$depends->{$pname}}){
+				push @{$list},{name => $dpname,depth => $depth};
+				deprestore($depends->{$pname},$depth + 1,$list);
+			}
+		}
+	}
+}

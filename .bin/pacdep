@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+
+use utf8;
+binmode STDIN,':encoding(utf8)';
+binmode STDOUT,':encoding(utf8)';
+
+unless($ARGV[0]){
+	print 'Usage: pacdep <package name>',"\n"; 
+	exit;
+}
+
+print 'Checking Dependency...',"\n";
+for my $pname (@ARGV){
+	my $depends = {};
+	pacdep($pname,$depends);
+	print '-' x 20, "\n";
+	print '> ' , $pname , "\n";
+	print '-' x 20, "\n";
+	for my $pname (sort keys %{$depends}){
+		print $pname ,"\n";
+	}
+	print '-' x 20, "\n";
+}
+
+exit;
+
+sub pacdep{
+	my $packagename = shift;
+	my $depends = shift;
+	my $ret = `pacman -Qi $packagename`;
+	unless($ret){
+		return '';
+	}
+	my @retlines = split /\n/,$ret;
+	my $iname,$idata,%info;
+	for my $l (@retlines){
+		if($l =~ /^\w/){
+			($iname,$idata) = $l =~ /^(.+?)\s*:\s*(.*?)$/;
+		}else{
+			my ($cidata) = $l =~ /^\s*(.*?)$/;
+			$idata .= $cidata;
+		}
+		$info{$iname} = $idata;
+	}
+	if($info{'Depends On'} ne 'None'){
+		my @depnames = map {s/\s*>=?.*//;$_} split /\s+/,$info{'Depends On'};
+		for my $pname (@depnames){
+			unless($depends->{$pname} == 1){
+				$depends->{$pname} = 1;
+				pacdep($pname,$depends);
+			}
+		}
+	}
+}
