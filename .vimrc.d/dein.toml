@@ -2,9 +2,9 @@
 # base
 # ------------------------------------
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# build = 'make'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
@@ -15,54 +15,53 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
+# depends = 'neomru.vim'
 
-[[plugins]]
-repo = 'ujihisa/unite-colorscheme'
+# [[plugins]]
+# repo = 'ujihisa/unite-colorscheme'
 
-[[plugins]]
-repo = 'tsukkee/unite-help'
+# [[plugins]]
+# repo = 'tsukkee/unite-help'
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-on_path = '.*'
+# [[plugins]]
+# repo = 'Shougo/neomru.vim'
 
-[[plugins]]
-repo = 'kmnk/vim-unite-giti'
+# [[plugins]]
+# repo = 'kmnk/vim-unite-giti'
 
-[[plugins]]
-repo = 'Shougo/unite-outline'
+# [[plugins]]
+# repo = 'Shougo/unite-outline'
 
-[[plugins]]
-repo = 'sgur/unite-everything'
+# [[plugins]]
+# repo = 'sgur/unite-everything'
 
-[[plugins]]
-repo = 'tacroe/unite-mark'
+# [[plugins]]
+# repo = 'tacroe/unite-mark'
 
-[[plugins]]
-repo = 'thinca/vim-unite-history'
+# [[plugins]]
+# repo = 'thinca/vim-unite-history'
 
-[[plugins]]
-repo = 'sgur/unite-qf'
+# [[plugins]]
+# repo = 'sgur/unite-qf'
 
-[[plugins]]
-repo = 'ujihisa/unite-gem'
+# [[plugins]]
+# repo = 'ujihisa/unite-gem'
 
-[[plugins]]
-repo = 'kaorimatz/unite-cpan-module'
+# [[plugins]]
+# repo = 'kaorimatz/unite-cpan-module'
 
-[[plugins]]
-repo = 'basyura/unite-rails'
+# [[plugins]]
+# repo = 'basyura/unite-rails'
 
 # ------------------------------------
 # doc
 # ------------------------------------
 
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
-repo = 'thinca/vim-ref'
+# [[plugins]]
+# repo = 'vim-jp/vimdoc-ja'
+#
+# [[plugins]]
+# repo = 'thinca/vim-ref'
 
 # ------------------------------------
 # util
@@ -74,8 +73,8 @@ repo = 'thinca/vim-ref'
 # [[plugins]]
 # repo = 'kana/vim-smartinput'
 
-[[plugins]]
-repo = 'vim-scripts/taglist.vim'
+# [[plugins]]
+# repo = 'vim-scripts/taglist.vim'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -184,8 +183,8 @@ repo = 'deton/jasegment.vim'
 # [[plugins]]
 # repo = 'wesleyche/Trinity'
 
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
+# [[plugins]]
+# repo = 'Shougo/vimfiler.vim'
 
 # [[plugins]]
 # repo = 'Shougo/vimshell.vim'

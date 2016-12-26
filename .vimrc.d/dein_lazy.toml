@@ -95,9 +95,9 @@ on_ft = ['ruby']
 repo = 'yuku-t/vim-ref-ri'
 on_ft = ['ruby']
 
-[[plugins]]
-repo = 'vim-scripts/ruby-matchit'
-on_ft = ['ruby']
+# [[plugins]]
+# repo = 'vim-scripts/ruby-matchit'
+# on_ft = ['ruby']
 
 # [[plugins]]
 # repo = 'klen/python-mode'
