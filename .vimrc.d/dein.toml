@@ -226,8 +226,8 @@ repo = 'nathanaelkane/vim-indent-guides'
 [[plugins]]
 repo = 'vimtaku/hl_matchit.vim'
 
-[[plugins]]
-repo = 'itchyny/lightline.vim'
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'vim-scripts/ShowWhiteSpace'
