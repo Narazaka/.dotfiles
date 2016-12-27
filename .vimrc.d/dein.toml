@@ -2,9 +2,9 @@
 # base
 # ------------------------------------
 
-# [[plugins]]
-# repo = 'Shougo/vimproc.vim'
-# build = 'make'
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
