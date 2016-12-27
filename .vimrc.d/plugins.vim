@@ -19,20 +19,18 @@ if has('kaoriya')
   let &rtp = join(filter(split(&rtp, ','), 'v:val !~ "[/\\\\]plugins[/\\\\]vimproc$"'), ',')
 endif
 
-call dein#begin(expand('~/.vim/bundle/'))
-call dein#load_toml(expand('~/.vimrc.d/dein.toml'), {'lazy': 0})
-call dein#load_toml(expand('~/.vimrc.d/dein_lazy.toml'), {'lazy': 1})
-call dein#end()
+let s:bundle_path = expand('~/.vim/bundle/')
+let s:dein_toml = expand('~/.vimrc.d/dein.toml')
+let s:dein_lazy_toml = expand('~/.vimrc.d/dein_lazy.toml')
+if dein#load_state(s:bundle_path)
+  call dein#begin(s:bundle_path, [$MYVIMRC, s:dein_toml, s:dein_lazy_toml])
+  call dein#load_toml(s:dein_toml, {'lazy': 0})
+  call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
 syntax enable
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-"NeoBundleCheck
-
-" pathogen
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
 
 runtime! ../.vimrc.d/plugins.d/*.vim
