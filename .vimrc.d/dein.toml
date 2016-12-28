@@ -92,8 +92,8 @@ repo = 'vim-scripts/vimtux'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
-[[plugins]]
-repo = 'wakatime/vim-wakatime'
+# [[plugins]]
+# repo = 'wakatime/vim-wakatime'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
