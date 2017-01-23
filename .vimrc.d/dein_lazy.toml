@@ -1,20 +1,4 @@
 # ------------------------------------
-# complete
-# ------------------------------------
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = "has('lua')"
-
-[[plugins]]
-repo = 'Shougo/neocomplcache.vim'
-if = "! has('lua')"
-
-[[plugins]]
-repo = 'Shougo/neocomplcache-clang'
-if = "! has('lua')"
-
-# ------------------------------------
 # lang
 # ------------------------------------
 
