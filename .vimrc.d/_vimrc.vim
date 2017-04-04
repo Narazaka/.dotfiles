@@ -84,4 +84,5 @@ autocmd BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 autocmd BufRead,BufNewFile,BufReadPre *.jade set filetype=pug
 autocmd BufRead,BufNewFile,BufReadPre *.pug set filetype=pug
 autocmd BufRead,BufNewFile,BufReadPre *.styl set filetype=stylus
+autocmd BufRead,BufNewFile,BufReadPre *.es6 set filetype=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
