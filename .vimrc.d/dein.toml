@@ -98,6 +98,26 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# バッファ上のソースコードを実行して、その実行結果を Vim へ出力する為のプラグイン
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# 汎用的な quickrun-hook をまとめたプラグイン
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+
+# ------------------------------------
+# quickfix
+# ------------------------------------
+
+# quickfix の該当するコード箇所のハイライトを行う
+[[plugins]]
+repo = 'jceb/vim-hier'
+
+# quickfix の該当箇所にカーソルを移動させるとエラー内容がコマンドウィンドウに出力される
+[[plugins]]
+repo = 'dannyob/quickfixstatus'
+
 # ------------------------------------
 # for external tools
 # ------------------------------------
@@ -105,8 +125,12 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'vim-scripts/vimtux'
 
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
+
+# quickrun.vim を使用したシンタックスチェックを行うプラグイン
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'osyo-manga/vim-watchdogs'
 
 # [[plugins]]
 # repo = 'wakatime/vim-wakatime'
