@@ -24,6 +24,10 @@ nnoremap s<UP> <C-w>k
 nnoremap s<RIGHT> <C-w>l
 " ---------------------
 " tab
+nnoremap g<UP> :<C-u>tabnew<CR>
+nnoremap g<DOWN> :<C-u>tabclose<CR>
+nnoremap g<LEFT> :gt
+nnoremap g<RIGHT> :gT
 nnoremap tt t
 nnoremap t <Nop>
 " nnoremap tn :<C-u>tabnew<CR>:tabmove<CR>:Unite -buffer-name=file file<CR>
@@ -107,6 +111,10 @@ nnoremap Ugl :<C-u>Unite giti/log<CR>
 nnoremap Ugr :<C-u>Unite giti/remote<CR>
 nnoremap Ugc :<C-u>Unite giti/config<CR>
 nnoremap Ugg :<C-u>Unite giti/grep<CR>
+" ---------------------
+" quickfix
+autocmd FileType qf nnoremap <silent><buffer>q :quit<CR>
+autocmd FileType qf :nnoremap Q :<C-u>Qfreplace
 " ---------------------
 " shortcut
 nnoremap Xd :<C-u>vertical diffsplit 

@@ -79,7 +79,6 @@ autocmd FileType perl,cgi map <F5> :w !perl<CR>
 autocmd FileType cgi :set filetype=perl
 autocmd FileType python :compiler python
 autocmd FileType java :compiler javac
-autocmd FileType qf :nnoremap Q :<C-u>Qfreplace
 autocmd BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 autocmd BufRead,BufNewFile,BufReadPre *.jade set filetype=pug
 autocmd BufRead,BufNewFile,BufReadPre *.pug set filetype=pug
