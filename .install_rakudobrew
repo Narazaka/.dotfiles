@@ -1,0 +1,5 @@
+#!/bin/sh
+git clone https://github.com/tadzik/rakudobrew.git ~/.rakudobrew
+echo 'export PATH="$HOME/.rakudobrew/bin:$PATH"' >> ~/.zshenv
+echo 'eval "$(rakudobrew init -)"' >> ~/.zshenv
+exec $SHELL -l
