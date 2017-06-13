@@ -125,6 +125,15 @@ repo = 'dannyob/quickfixstatus'
 [[plugins]]
 repo = 'vim-scripts/vimtux'
 
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
 # [[plugins]]
 # repo = 'scrooloose/syntastic'
 
@@ -142,7 +151,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'grep.vim'
+repo = 'vim-scripts/grep.vim'
 
 # ------------------------------------
 # textobj
