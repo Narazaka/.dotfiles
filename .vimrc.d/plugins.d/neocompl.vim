@@ -21,7 +21,7 @@ if dein#tap('neocomplete.vim')
 	" For perlomni.vim setting.
 	" https://github.com/c9s/perlomni.vim
 	let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-	let g:neocomplete#sources#omni#input_patterns.ruby = '\h\w\.\w*'
+	let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 	let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 "	inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 	inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "<CR>"

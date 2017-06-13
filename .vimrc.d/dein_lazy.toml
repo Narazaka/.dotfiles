@@ -76,6 +76,10 @@ repo = 'vim-ruby/vim-ruby'
 on_ft = ['ruby']
 
 [[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_ft = ['ruby']
+
+[[plugins]]
 repo = 'yuku-t/vim-ref-ri'
 on_ft = ['ruby']
 
