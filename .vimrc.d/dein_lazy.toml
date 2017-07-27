@@ -108,3 +108,11 @@ on_ft = ['riot']
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = ['elixir']
+
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+on_ft = ['elixir']
