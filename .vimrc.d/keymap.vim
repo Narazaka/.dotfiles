@@ -111,6 +111,9 @@ nnoremap Ugl :<C-u>Unite giti/log<CR>
 nnoremap Ugr :<C-u>Unite giti/remote<CR>
 nnoremap Ugc :<C-u>Unite giti/config<CR>
 nnoremap Ugg :<C-u>Unite giti/grep<CR>
+" FZF
+" ---------------------
+nnoremap UU :<C-u>FZF<CR>
 " ---------------------
 " quickfix
 autocmd FileType qf nnoremap <silent><buffer>q :quit<CR>
