@@ -21,7 +21,7 @@ set wrap
 set list
 set listchars=tab:^\ ,trail:~
 " カーソル行をハイライト
-set cursorline
+"set cursorline
 highlight CursorLine gui=underline
 " ---------------------
 " syntax color
