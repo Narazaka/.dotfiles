@@ -154,7 +154,7 @@ SPROMPT_COLOR="%{$fg_bold[red]%}"
 RPROMPT_COLOR="%{$fg_bold[yellow]%}"
 
 if [ $IS_REMOTE_LOGIN_SHELL ] ; then
-  PROMPT_HOST_COLOR="%{$bg[red]%}%{$fg_bold[yellow]%}"
+  PROMPT_HOST_COLOR="%{$bg[yellow]%}%{$fg_bold[red]%}"
 else
   PROMPT_HOST_COLOR="%{$fg_bold[yellow]%}"
 fi
