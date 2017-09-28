@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore.global
 	autocrlf = false
 	quotepath = false
+	safecrlf = true
 [color]
 	diff = auto
 	status = auto
