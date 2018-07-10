@@ -308,6 +308,7 @@ alias ssh='ssh -o ServerAliveInterval=60'
 alias htmlconv='sed -e "s/</\&lt;/g;s/>/\&gt;/g;s/\t/\&nbsp;\&nbsp;\&nbsp;\&nbsp;/g;s/\s/\&nbsp;/g" '
 # capistrano用ステージリスト
 alias cst='find config/deploy -name "*.rb" | perl -nle "print /([^\\/]+)\.rb$/;print \"-\"x10;open F, \$_;print grep /^server|rails_env/, <F>"'
+alias g='git'
 
 ########################################
 # Misc
