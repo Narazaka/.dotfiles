@@ -31,6 +31,8 @@ if [ -n "$SSH_CLIENT" -o -n "$SSH_TTY" -o "`ps -o comm= -p $PPID`" = "sshd" ] ; 
   IS_REMOTE_LOGIN_SHELL=1
 fi
 
+REPORTTIME=3
+
 ########################################
 # History
 ########################################
