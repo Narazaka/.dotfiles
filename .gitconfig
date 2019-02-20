@@ -32,3 +32,12 @@
 	diff = diff-highlight | less
 [diff "exif"]
 	textconv = exiftool
+[merge]
+	ff = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	ff = only
