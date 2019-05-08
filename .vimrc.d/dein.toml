@@ -99,8 +99,8 @@ repo = 'tomtom/tcomment_vim'
 repo = 'tpope/vim-surround'
 
 # バッファ上のソースコードを実行して、その実行結果を Vim へ出力する為のプラグイン
-[[plugins]]
-repo = 'thinca/vim-quickrun'
+# [[plugins]]
+# repo = 'thinca/vim-quickrun'
 
 # 汎用的な quickrun-hook をまとめたプラグイン
 [[plugins]]
@@ -125,30 +125,30 @@ repo = 'dannyob/quickfixstatus'
 [[plugins]]
 repo = 'vim-scripts/vimtux'
 
-[[plugins]]
-repo = 'junegunn/fzf'
-build = './install --bin'
-merged = 0
+# [[plugins]]
+# repo = 'junegunn/fzf'
+# build = './install --bin'
+# merged = 0
 
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = 'fzf'
+# [[plugins]]
+# repo = 'junegunn/fzf.vim'
+# depends = 'fzf'
 
 # [[plugins]]
 # repo = 'scrooloose/syntastic'
 
 # quickrun.vim を使用したシンタックスチェックを行うプラグイン
-[[plugins]]
-repo = 'osyo-manga/vim-watchdogs'
+# [[plugins]]
+# repo = 'osyo-manga/vim-watchdogs'
 
 # [[plugins]]
 # repo = 'wakatime/vim-wakatime'
 
-[[plugins]]
-repo = 'tpope/vim-fugitive'
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'vim-scripts/grep.vim'
