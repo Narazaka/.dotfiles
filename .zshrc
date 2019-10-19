@@ -70,7 +70,6 @@ setopt pushd_silent          # pushd,popdの度にディレクトリスタック
 ########################################
 # Input Help
 ########################################
-setopt correct
 setopt extended_glob         # 拡張グロブを有効にする
 setopt prompt_subst
 zstyle ':completion:*:default' menu select # completion with arrow key
@@ -97,7 +96,7 @@ setopt path_dirs             # コマンド名に / が含まれているとき 
 setopt print_eight_bit       # 補完候補リストの日本語を適正表示
 
 #setopt auto_correct          # 補完時にスペルチェック
-setopt correct               # スペルミスを補完
+#setopt correct               # スペルミスを補完
 #setopt correct_all           # コマンドライン全てのスペルチェックをする
 
 autoload -U predict-on       # 履歴による予測入力 (man zshcontrib)
