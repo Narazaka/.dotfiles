@@ -320,6 +320,8 @@ alias htmlconv='sed -e "s/</\&lt;/g;s/>/\&gt;/g;s/\t/\&nbsp;\&nbsp;\&nbsp;\&nbsp
 alias cst='find config/deploy -name "*.rb" | perl -nle "print /([^\\/]+)\.rb$/;print \"-\"x10;open F, \$_;print grep /^server|rails_env/, <F>"'
 alias g='git'
 
+alias cb='cd-bookmark'
+
 ########################################
 # Misc
 ########################################
