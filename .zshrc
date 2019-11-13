@@ -20,6 +20,14 @@ if [ -f ~/.zplug/init.zsh ] ; then
   fi
 fi
 
+function fssh() {
+  local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | fzf)
+
+  if [ ! -z "$host" ]; then
+    echo "ssh \"$host\""
+    ssh "$host"
+  fi
+}
 
 zcompile ~/.zshrc # compile zshrc
 export LANG=en_US.UTF-8
@@ -301,6 +309,7 @@ alias pd='popd'
 alias gd='dirs -v; echo -n "select number: ";
 read newdir; cd +"$newdir" '
 alias h='history'
+compdef h=history
 alias ha='history-all'
 alias sc='screen -U'
 alias sclose='screen -D'
@@ -310,6 +319,10 @@ alias htmlconv='sed -e "s/</\&lt;/g;s/>/\&gt;/g;s/\t/\&nbsp;\&nbsp;\&nbsp;\&nbsp
 # capistrano用ステージリスト
 alias cst='find config/deploy -name "*.rb" | perl -nle "print /([^\\/]+)\.rb$/;print \"-\"x10;open F, \$_;print grep /^server|rails_env/, <F>"'
 alias g='git'
+compdef g=git
+
+alias cb='cd-bookmark'
+compdef cb=cd-bookmark
 
 ########################################
 # Misc
