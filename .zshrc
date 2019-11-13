@@ -310,6 +310,7 @@ alias pd='popd'
 alias gd='dirs -v; echo -n "select number: ";
 read newdir; cd +"$newdir" '
 alias h='history'
+compdef h=history
 alias ha='history-all'
 alias sc='screen -U'
 alias sclose='screen -D'
@@ -319,8 +320,10 @@ alias htmlconv='sed -e "s/</\&lt;/g;s/>/\&gt;/g;s/\t/\&nbsp;\&nbsp;\&nbsp;\&nbsp
 # capistrano用ステージリスト
 alias cst='find config/deploy -name "*.rb" | perl -nle "print /([^\\/]+)\.rb$/;print \"-\"x10;open F, \$_;print grep /^server|rails_env/, <F>"'
 alias g='git'
+compdef g=git
 
 alias cb='cd-bookmark'
+compdef cb=cd-bookmark
 
 ########################################
 # Misc
