@@ -20,6 +20,14 @@ if [ -f ~/.zplug/init.zsh ] ; then
   fi
 fi
 
+function fssh() {
+  local host=$(grep -r 'Host ' $HOME/.ssh/* | cut -d' ' -f2 | sort | fzf)
+
+  if [ ! -z "$host" ]; then
+    echo "ssh \"$host\""
+    ssh "$host"
+  fi
+}
 
 zcompile ~/.zshrc # compile zshrc
 export LANG=en_US.UTF-8
