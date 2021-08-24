@@ -276,6 +276,16 @@ setopt print_exit_value      # 戻り値が 0 以外の場合終了コードを�
 #setopt single_line_zle       # デフォルトの複数行コマンドライン編集ではなく、１行編集モードになる
 #setopt xtrace                # コマンドラインがどのように展開され実行されたかを表示する
 
+# ssh-agent
+
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval $(<~/.ssh-agent-thing)
+fi
+ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+
 ########################################
 # aliases
 ########################################
