@@ -6,6 +6,7 @@
 	autocrlf = false
 	quotepath = false
 	safecrlf = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	diff = auto
 	status = auto
@@ -21,15 +22,13 @@
 	default = simple
 [interactive]
 	singlekey = true
+	diffFilter = diff-so-fancy --patch
 [diff]
 	compactionHeuristic = true
 [diff "xlsx"]
 	binary = true
 	textconv = $GOPATH/bin/git-xlsx-textconv
 [pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
 [diff "exif"]
 	textconv = exiftool
 [merge]
