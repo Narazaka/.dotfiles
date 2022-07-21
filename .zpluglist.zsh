@@ -1,5 +1,4 @@
 zplug "mollifier/anyframe"
-zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions", defer:2
 # Set the priority when loading
