@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir -p ~/.rakubrew/bin
+curl -o ~/.rakubrew/bin/rakubrew https://rakubrew.org/perl/rakubrew
+chmod +x ~/.rakubrew/bin/rakubrew
+echo 'export PATH="$HOME/.rakubrew/bin:$PATH"' >> ~/.zshenv
+echo 'eval "$(rakubrew init -)"' >> ~/.zshenv
+exec $SHELL -l
