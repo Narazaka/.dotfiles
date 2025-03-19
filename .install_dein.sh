@@ -1,5 +1,5 @@
 curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > dein_installer.sh
-sh dein_installer.sh ~/.vim/bundle
+sh dein_installer.sh
 rm dein_installer.sh
 mkdir -p ~/.vim/bundle/repos/github.com
 if [ -e ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim ]; then
