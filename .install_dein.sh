@@ -1,8 +1,14 @@
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
+curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > dein_installer.sh
 sh dein_installer.sh ~/.vim/bundle
 rm dein_installer.sh
 mkdir -p ~/.vim/bundle/repos/github.com
-git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
+if [ -e ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim ]; then
+  git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
+else
+  cd ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
+  git pull
+  cd -
+fi
 if [ "`echo $PATH | sed -n "/windows.*system32/p"`" = "" ] ; then
   vim -c "VimProcInstall" -c "call dein#install()" -c q
 else
