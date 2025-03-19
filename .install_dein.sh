@@ -3,11 +3,11 @@ sh dein_installer.sh ~/.vim/bundle
 rm dein_installer.sh
 mkdir -p ~/.vim/bundle/repos/github.com
 if [ -e ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim ]; then
-  git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
-else
   cd ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
   git pull
   cd -
+else
+  git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/repos/github.com/Shougo/vimproc.vim
 fi
 if [ "`echo $PATH | sed -n "/windows.*system32/p"`" = "" ] ; then
   vim -c "VimProcInstall" -c "call dein#install()" -c q
