@@ -9,7 +9,7 @@ if has('vim_starting')
     set nocompatible
   endif
 
-  set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim/
+  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim/
 endif
 
 let g:vimproc#download_windows_dll = 1
@@ -19,7 +19,7 @@ if has('kaoriya')
   let &rtp = join(filter(split(&rtp, ','), 'v:val !~ "[/\\\\]plugins[/\\\\]vimproc$"'), ',')
 endif
 
-let s:bundle_path = expand('~/.vim/bundle/')
+let s:bundle_path = expand('~/.cache/dein/')
 let s:dein_toml = expand('~/.vimrc.d/dein.toml')
 let s:dein_lazy_toml = expand('~/.vimrc.d/dein_lazy.toml')
 if dein#load_state(s:bundle_path)
