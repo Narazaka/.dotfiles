@@ -15,12 +15,12 @@ set title
 set wildmenu
 set showcmd
 set display+=lastline
-" ’·‚¢s‚ğÜ‚è•Ô‚µ‚Ä•\¦ (nowrap:Ü‚è•Ô‚³‚È‚¢)
+" é•·ã„è¡Œã‚’æŠ˜ã‚Šè¿”ã—ã¦è¡¨ç¤º (nowrap:æŠ˜ã‚Šè¿”ã•ãªã„)
 set wrap
-" ƒ^ƒu‚â‰üs‚ğ•\¦ (list:•\¦)
+" ã‚¿ãƒ–ã‚„æ”¹è¡Œã‚’è¡¨ç¤º (list:è¡¨ç¤º)
 set list
 set listchars=tab:^\ ,trail:~
-" ƒJ[ƒ\ƒ‹s‚ğƒnƒCƒ‰ƒCƒg
+" ã‚«ãƒ¼ã‚½ãƒ«è¡Œã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆ
 "set cursorline
 highlight CursorLine gui=underline
 " ---------------------
@@ -46,9 +46,9 @@ set hlsearch
 " edit
 set autoindent
 set cindent
-" Š‡ŒÊ“ü—Í‚É‘Î‰‚·‚éŠ‡ŒÊ‚ğ•\¦ (noshowmatch:•\¦‚µ‚È‚¢)
+" æ‹¬å¼§å…¥åŠ›æ™‚ã«å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’è¡¨ç¤º (noshowmatch:è¡¨ç¤ºã—ãªã„)
 set showmatch
-" ƒoƒbƒNƒXƒy[ƒX‚ÅƒCƒ“ƒfƒ“ƒg‚â‰üs‚ğíœ‚Å‚«‚é‚æ‚¤‚É‚·‚é
+" ãƒãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã§ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚„æ”¹è¡Œã‚’å‰Šé™¤ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 set backspace=indent,eol,start
 set shiftwidth=2
 set tabstop=2
@@ -60,7 +60,7 @@ set clipboard^=unnamed,unnamedplus
 " set guioptions+=a
 " set paste
 set pastetoggle=<F12>
-" ƒeƒLƒXƒg‘}“ü’†‚Ì©“®Ü‚è•Ô‚µ‚ğ“ú–{Œê‚É‘Î‰‚³‚¹‚é
+" ãƒ†ã‚­ã‚¹ãƒˆæŒ¿å…¥ä¸­ã®è‡ªå‹•æŠ˜ã‚Šè¿”ã—ã‚’æ—¥æœ¬èªã«å¯¾å¿œã•ã›ã‚‹
 set formatoptions+=mM
 " ---------------------
 " backup
@@ -69,7 +69,7 @@ set formatoptions+=mM
 " ---------------------
 " GUI view
 if has('win32')
-  set guifont=VL_ƒSƒVƒbƒN:h9:cSHIFTJIS
+  set guifont=VL_ã‚´ã‚·ãƒƒã‚¯:h9:cSHIFTJIS
 end
 " ---------------------
 " filetypes
