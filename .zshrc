@@ -1,23 +1,29 @@
 if [ -f ~/.zshenv ] ; then ; source ~/.zshenv ; fi
-if [ -f ~/.zplug/init.zsh ] ; then
-  source ~/.zplug/init.zsh
-  source ~/.zpluglist.zsh
-  if ! zplug check --verbose; then
-    printf 'Install? [y/N]: '
-    if read -q; then
-      echo; zplug install
-    fi
-  fi
-  zplug load --verbose
+if [[ -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
 
-  if zplug check "mollifier/anyframe" ; then
-    bindkey '^xf' anyframe-widget-insert-filename
-    bindkey '^x^b' anyframe-widget-checkout-git-branch
-    bindkey '^xb' anyframe-widget-insert-git-branch
-    # bindkey '^xg' anyframe-widget-git-add
-    # bindkey '^x^h' anyframe-widget-execute-history
-    bindkey '^x^h' anyframe-widget-put-history
-  fi
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+  source ~/.zinitlist.zsh
 fi
 
 function fssh() {
@@ -331,8 +337,8 @@ alias cst='find config/deploy -name "*.rb" | perl -nle "print /([^\\/]+)\.rb$/;p
 alias g='git'
 compdef g=git
 
-alias cb='cd-bookmark'
-compdef cb=cd-bookmark
+#alias cb='cd-bookmark'
+#compdef cb=cd-bookmark
 
 ########################################
 # Misc
@@ -375,3 +381,4 @@ export G_FILENAME_ENCODING=@locale # Grip などGlibアプリケーション出�
 #}
 
 [[ -s ~/.zresources ]] && source ~/.zresources
+
