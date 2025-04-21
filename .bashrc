@@ -9,5 +9,5 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 if test -e /bin/zsh ; then
-  exec /bin/zsh
+#  exec /bin/zsh
 fi
